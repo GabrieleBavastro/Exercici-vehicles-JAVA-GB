@@ -1,5 +1,7 @@
 package com.vehicles.project;
 
+import java.util.Objects;
+
 import com.vehicles.project.Wheel;
 
 public class Wheel {
@@ -28,5 +30,13 @@ public class Wheel {
 
 	public void setDiameter(double diameter) {// Setter.
 		this.diameter = diameter;
+	}
+	
+	public boolean equals(Object compareWheels) {
+		if (this == compareWheels) return true;
+		if (compareWheels == null || getClass() != compareWheels.getClass()) return false;
+		Wheel wheel = (Wheel) compareWheels;
+		return Double.compare(wheel.getDiameter(), getDiameter()) == 0 &&
+				Objects.equals(getBrand(), wheel.getBrand());
 	}
 }

@@ -10,6 +10,7 @@ public class Main {
 		CreateVehicles userVehicle = new CreateVehicles();
 		List<Wheel> frontWheels = new ArrayList<>();
 		List<Wheel> backWheels = new ArrayList<>();
+		
 		// ask if must be created a car or a bike.
 		switch (userVehicle.askVehicle()) {
 
@@ -17,8 +18,8 @@ public class Main {
 			// Ask for the required info about the car.
 			Car car = new Car(userVehicle.askPlate(), userVehicle.askBrand(), userVehicle.askColor());
 			// Ask for the 2 wheels front and the 2 back.
-			frontWheels = userVehicle.askWheels("front");
-			backWheels = userVehicle.askWheels("back");
+			frontWheels = (userVehicle.askWheels("front"));
+			backWheels = (userVehicle.askWheels("back"));
 			// Add wheels in the array.
 			car.addWheels(frontWheels, backWheels);
 			// Resume the info about the car and the Wheels created.

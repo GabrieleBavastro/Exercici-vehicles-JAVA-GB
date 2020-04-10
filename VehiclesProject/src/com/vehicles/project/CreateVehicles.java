@@ -77,9 +77,11 @@ public class CreateVehicles {
 		Wheel leftWheel = new Wheel(userVehicle.askBrandWheels(location, "left"),
 				userVehicle.askDiameterWheels(location, "left"));
 		wheels.add(leftWheel);
+		
 		Wheel rightWheel = new Wheel(userVehicle.askBrandWheels(location, "right"),
 				userVehicle.askDiameterWheels(location, "right"));
 		wheels.add(rightWheel);
+				
 		return wheels;
 	}
 
@@ -93,7 +95,7 @@ public class CreateVehicles {
 		System.out.println("Please introduce the diameter of the " + position + " " + wheelsLocation
 				+ " wheel. (Introduce a number between 0.4 and 4)");
 		String input = scanner.next();
-		while ((Double.parseDouble(input) <= 0.4) || (Double.parseDouble(input) >= 4)) {
+		while ((Double.parseDouble(input) <= 0.4) || (Double.parseDouble(input) >= 4.0)) {
 			System.out.println("Incorrect Format! Please enter again the diameter of the " + position + " "
 					+ wheelsLocation + " wheel. (between 0.4 and 4)");
 			input = scanner.next();
@@ -131,7 +133,6 @@ public class CreateVehicles {
 		System.out.print("You chosed the following wheels: \n");
 		for (Wheel wheel : bike.getWheels()) {
 			System.out.print("Brand: " + wheel.getBrand() + ". Diameter: " + wheel.getDiameter() + "\n");
-
 		}
 	}
 }
